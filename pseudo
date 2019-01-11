@@ -1,0 +1,38 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+int main() {
+    srand( time ( NULL ) );
+
+    std::cout << "Wygeneruję liczbę od 0 do 100 - spróbuj ją wykryć! \n ";
+    int liczba = ((std::rand() % 99) + 1);
+    int i = 0;
+    int strzaly = 0;
+    do{
+        std::cin >> i;
+        if (i > 1000 || i < 0)
+        {
+            std::cout << "liczba jest spoza zakresu! \n";
+            continue;
+        }
+
+        if (i > liczba)
+        {
+            std::cout << "Twoja liczba jest za duza!\n";
+        }
+
+        else if(i < liczba)
+        {
+            std::cout << "Twoja liczba jest za mała\n";
+        }
+
+
+        strzaly++;
+    }while(i != liczba);
+
+    std::cout << "gratuluję!\n";
+    std::cout << "Twoa liczba strzałów to " << strzaly;
+
+    return 0;
+}
